@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  frontend:    
+    image: frontend
+    ports:
+      - 4000:3000
+    depends_on:
+      - backend
+  backend:
+    image: backend
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:latest
